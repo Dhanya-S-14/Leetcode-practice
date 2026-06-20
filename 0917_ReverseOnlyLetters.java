@@ -1,51 +1,55 @@
 /*
-Problem: 917. Reverse Only Letters
+Problem: 345. Reverse Vowels of a String
 Difficulty: Easy
 
-Runtime: 0 ms (Beats 100.00%)
-Memory: 42.56 MB (Beats 94.90%)
+Runtime: 3 ms (Beats 75.64%)
+Memory: 46.53 MB (Beats 65.71%)
 
 Approach:
 - Convert the string into a character array.
 - Use two pointers:
   - Left pointer starts from the beginning.
   - Right pointer starts from the end.
-- If the left character is not a letter, move left forward.
-- If the right character is not a letter, move right backward.
-- Otherwise, swap the two letters and move both pointers.
+- Move the left pointer until a vowel is found.
+- Move the right pointer until a vowel is found.
+- Swap the vowels and move both pointers.
 - Convert the character array back to a string.
 
 Time Complexity: O(n)
 Space Complexity: O(n)
 
-Submitted: Jun 17, 2026
 */
 
 class Solution {
-    public String reverseOnlyLetters(String s) {
+    public String reverseVowels(String b) {
 
-        int i = 0, j = s.length() - 1;
+        int n = b.length();
 
-        char ch[] = s.toCharArray();
+        int l = 0, r = n - 1;
 
-        while (i < j) {
+        String rev = "aeiouAEIOU";
+        char ch[] = b.toCharArray();
 
-            if (!Character.isLetter(ch[i])) {
-                i++;
+        while (l < r) {
+
+            if (rev.indexOf(ch[l]) == -1) {
+                l++;
             }
-            else if (!Character.isLetter(ch[j])) {
-                j--;
+            else if (rev.indexOf(ch[r]) == -1) {
+                r--;
             }
             else {
-                char temp = ch[i];
-                ch[i] = ch[j];
-                ch[j] = temp;
 
-                i++;
-                j--;
+                char er = b.charAt(l);
+
+                ch[l] = ch[r];
+                ch[r] = er;
+
+                l++;
+                r--;
             }
         }
 
         return new String(ch);
     }
-}
+}Reverse Vowels of a String solution
