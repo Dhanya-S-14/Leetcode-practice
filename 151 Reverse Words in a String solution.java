@@ -15,7 +15,6 @@ Approach:
 Time Complexity: O(n)
 Space Complexity: O(n)
 
-Submitted: Jun 20, 2026
 */
 
 class Solution {
