@@ -13,7 +13,6 @@ Approach:
 Time Complexity: O(n)
 Space Complexity: O(1)
 
-Submitted: Jun 20, 2026
 */
 
 class Solution {
