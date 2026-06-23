@@ -1,20 +1,6 @@
 283. Move Zeroes
 
-Runtime: 2 ms
 
-Beats: 91.91%
-
-Memory: 47.97 MB
-
-Beats: 19.64%
-
-Key Learning
-
-Two-pointer technique helps perform the operation in-place.
-
-Maintains the relative order of non-zero elements.
-
-Efficient single-pass solution with constant extra space.
 
 class Solution {
 
