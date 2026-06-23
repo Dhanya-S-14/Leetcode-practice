@@ -1,22 +1,6 @@
 /*
 Problem: 345. Reverse Vowels of a String
-Difficulty: Easy
 
-Runtime: 3 ms (Beats 75.64%)
-Memory: 46.53 MB (Beats 65.71%)
-
-Approach:
-- Convert the string into a character array.
-- Use two pointers:
-  - Left pointer starts from the beginning.
-  - Right pointer starts from the end.
-- Move the left pointer until a vowel is found.
-- Move the right pointer until a vowel is found.
-- Swap the vowels and move both pointers.
-- Convert the character array back to a string.
-
-Time Complexity: O(n)
-Space Complexity: O(n)
 
 */
 
@@ -52,4 +36,4 @@ class Solution {
 
         return new String(ch);
     }
-}Reverse Vowels of a String solution
+}
