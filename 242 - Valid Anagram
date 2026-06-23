@@ -1,8 +1,5 @@
 // LeetCode 242 - Valid Anagram
-// Difficulty: Easy
-// Approach: Frequency Array
-// Time Complexity: O(n)
-// Space Complexity: O(1)
+
 
 class Solution {
     public boolean isAnagram(String s, String t) {
