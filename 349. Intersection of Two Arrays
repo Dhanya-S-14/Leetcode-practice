@@ -1,18 +1,5 @@
 /*
-Problem: 349. Intersection of Two Arrays
-Difficulty: Easy
-
-Runtime: 2 ms (Beats 98.19%)
-Memory: 44.77 MB (Beats 82.07%)
-
-Approach:
-- Store all elements of nums1 in a HashSet.
-- Traverse nums2 and check if an element exists in the first set.
-- Store common elements in another HashSet to avoid duplicates.
-- Convert the result set into an array and return it.
-
-Time Complexity: O(n + m)
-Space Complexity: O(n)
+Problem: 349. Intersection of Two Array
 
 */
 
