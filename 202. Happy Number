@@ -1,21 +1,5 @@
 /*
 Problem: 202. Happy Number
-Difficulty: Easy
-
-Runtime: 0 ms (Beats 100.00%)
-Memory: 42.16 MB (Beats 88.47%)
-
-Approach:
-- Repeatedly replace the number with the sum of squares of its digits.
-- If the number becomes 1 → it is a Happy Number.
-- If the number enters a cycle (detected using 4) → it is not a Happy Number.
-- Use a helper function to compute digit-square sum.
-
-Key Insight:
-- All non-happy numbers eventually enter a cycle containing 4.
-
-Time Complexity: O(log n × number of iterations)
-Space Complexity: O(1)
 */
 
 class Solution {
