@@ -1,20 +1,5 @@
 /*
 Problem: 189. Rotate Array
-Difficulty: Medium
-
-Runtime: 0 ms (Beats 100.00%)
-Memory: 61.34 MB (Beats 40.14%)
-
-Approach:
-- Rotation is performed using the Reversal Algorithm.
-- First reverse the entire array.
-- Then reverse the first k elements.
-- Finally reverse the remaining n-k elements.
-- This rotates the array to the right by k positions.
-
-Time Complexity: O(n)
-Space Complexity: O(1)
-
 */
 
 class Solution {
