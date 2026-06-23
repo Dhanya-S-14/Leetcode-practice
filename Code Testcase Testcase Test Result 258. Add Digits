@@ -1,0 +1,17 @@
+
+258. Add Digits
+
+    public int addDigits(int num) {
+        
+        if(num>=0&&num<=9){
+           return num;
+        }else {
+            while(num>=10)
+        num=check(num);
+        }
+         
+
+  return num;
+
+    }
+}
