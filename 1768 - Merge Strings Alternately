@@ -1,3 +1,6 @@
+
+//1768 - Merge Strings Alternately
+mergeAlternately
 class Solution {
     public String mergeAlternately(String word1, String word2) {
         String ans = "";
