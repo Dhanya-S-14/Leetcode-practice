@@ -1,0 +1,21 @@
+1991. Find the Middle Index in Array
+
+class Solution {
+    public int findMiddleIndex(int[] nums) {
+        int total=0;
+        int index=-1;
+        int left=0;
+        for(int i=0;i<nums.length;i++){
+            total+=nums[i];
+        }
+        for(int i=0;i<nums.length;i++){
+            total-=nums[i];
+            if(left==total){
+                index=i;
+                return index;
+            }
+            left+=nums[i];
+        }
+      return index;
+    }
+}
