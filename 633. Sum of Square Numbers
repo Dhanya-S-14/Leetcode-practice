@@ -1,0 +1,22 @@
+633. Sum of Square Numbers
+class Solution {
+    public boolean judgeSquareSum(int c) {
+  int l=0,r=(int)Math.sqrt(c);
+  boolean flag=false;
+  while(l<=r){
+      long sum=(long)l*l+ (long) r*r;
+   if(sum==c){
+       flag=true;
+      break;
+   } 
+      else if(sum>c){
+          r--;
+      }
+      else {
+          l++;
+      }
+  }
+  return flag;
+
+    }
+}
