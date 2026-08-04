@@ -1,0 +1,26 @@
+3731. Find Missing Elements
+class Solution {
+    public List<Integer> findMissingElements(int[] nums) {
+        int minVal = Integer.MAX_VALUE;
+        int maxVal = Integer.MIN_VALUE;
+        Set<Integer> numSet = new HashSet<>();
+        
+        // Find boundaries and store elements
+        for (int num : nums) {
+            if (num < minVal) minVal = num;
+            if (num > maxVal) maxVal = num;
+            numSet.add(num);
+        }
+        
+        List<Integer> result = new ArrayList<>();
+        
+        // Check for missing elements sequentially
+        for (int i = minVal; i <= maxVal; i++) {
+            if (!numSet.contains(i)) {
+                result.add(i);
+            }
+        }
+        
+        return result;
+    }
+}
