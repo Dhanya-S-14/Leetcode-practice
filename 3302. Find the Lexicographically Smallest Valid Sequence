@@ -1,0 +1,81 @@
+3302. Find the Lexicographically Smallest Valid Sequence
+class Solution {
+    public int[] validSequence(String word1, String word2) {
+        int n = word1.length();
+        int m = word2.length();
+
+        int[] suf = new int[m + 1];
+        suf[m] = n;
+
+        int p = n - 1;
+
+        for (int i = m - 1; i >= 0; i--) {
+            while (p >= 0 && word1.charAt(p) != word2.charAt(i)) {
+                p--;
+            }
+
+            if (p < 0) {
+                suf[i] = -1;
+            } else {
+                suf[i] = p;
+                p--;
+            }
+        }
+
+        int[] ans = new int[m];
+
+        int pos = 0;
+        boolean mismatch = false;
+
+        for (int i = 0; i < m; i++) {
+            if (pos < n && word1.charAt(pos) == word2.charAt(i)) {
+                ans[i] = pos;
+                pos++;
+                continue;
+            }
+
+            if (!mismatch &&
+                pos < n &&
+                suf[i + 1] != -1 &&
+                pos < suf[i + 1]) {
+
+                ans[i] = pos;
+                pos++;
+                mismatch = true;
+                continue;
+            }
+
+            boolean found = false;
+
+            while (pos < n) {
+
+                // Exact match.
+                if (word1.charAt(pos) == word2.charAt(i)) {
+                    ans[i] = pos;
+                    pos++;
+                    found = true;
+                    break;
+                }
+
+                if (!mismatch &&
+                    suf[i + 1] != -1 &&
+                    pos < suf[i + 1]) {
+
+                    ans[i] = pos;
+                    pos++;
+                    mismatch = true;
+                    found = true;
+                    break;
+                }
+
+                pos++;
+            }
+
+            if (!found) {
+                return new int[0];
+            }
+        }
+
+        return ans;
+    }
+}
