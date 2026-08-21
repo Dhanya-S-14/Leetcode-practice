@@ -1,0 +1,57 @@
+3116. Kth Smallest Amount With Single Denomination Combination
+class Solution {
+    public long findKthSmallest(int[] coins, int k) {
+        long low = 1;
+        long high = 2000000000L * 25L; 
+        long ans = high;
+
+        while (low <= high) {
+            long mid = low + (high - low) / 2;
+            if (countValidAmounts(coins, mid) >= k) {
+                ans = mid;
+                high = mid - 1;
+            } else {
+                low = mid + 1;
+            }
+        }
+        return ans;
+    }
+    private long countValidAmounts(int[] coins, long x) {
+        long total = 0;
+        int n = coins.length;
+        int totalSubsets = 1 << n;
+        for (int i = 1; i < totalSubsets; i++) {
+            long lcmVal = 1;
+            int setBits = 0;
+            boolean overflow = false;
+
+            for (int j = 0; j < n; j++) {
+                if ((i & (1 << j)) != 0) {
+                    setBits++;
+                    lcmVal = lcm(lcmVal, coins[j]);
+                    if (lcmVal > x) {
+                        overflow = true;
+                        break;
+                    }
+                }
+            }
+
+            if (!overflow) {
+                if (setBits % 2 == 1) {
+                    total += (x / lcmVal); 
+                } else {
+                    total -= (x / lcmVal); 
+                }
+            }
+        }
+        return total;
+    }
+    private long gcd(long a, long b) {
+        if (b == 0) return a;
+        return gcd(b, a % b);
+    }
+
+    private long lcm(long a, long b) {
+        return (a / gcd(a, b)) * b;
+    }
+}
