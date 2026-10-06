@@ -1,0 +1,26 @@
+2161. Partition Array According to Given Pivot
+class Solution {
+    public int[] pivotArray(int[] nums, int pivot) {
+       List<Integer> ans = new ArrayList<>();
+        for (int x : nums) {
+            if (x < pivot) {
+                ans.add(x);
+            }
+        }
+
+        for (int x : nums) {
+            if (x == pivot) {
+                ans.add(x);
+            }
+        }
+ 
+        for (int x : nums) {
+            if (x > pivot) {
+                ans.add(x);
+            }
+        }
+        
+
+        return ans.stream().mapToInt(Integer::intValue).toArray();
+    }
+}
